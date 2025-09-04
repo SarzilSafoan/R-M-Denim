@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>R & M Denim Wear Ltd.</title>
+  <title>R&M Denim Wear Ltd.</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -30,7 +32,7 @@
         <!-- Right: Navigation Links -->
         <div class="collapse navbar-collapse justify-content-end" id="mainNav">
           <ul class="navbar-nav gap-3">
-            <li class="nav-item"><a href="#" class="nav-link">Our Factories</a></li>
+            <li class="nav-item"><a href="factory.html" class="nav-link">Our Factories</a></li>
             <li class="nav-item"><a href="#Product" class="nav-link">Our Products</a></li>
             <li class="nav-item"><a href="#footer-contact" class="nav-link">Contact Us</a></li>
           </ul>
@@ -47,35 +49,29 @@
   <div class="container py-5">
     <h2 class="display-5 fw-bold">Premium Denim, Locally Crafted</h2>
     <p class="lead">Explore stitched elegance and textile-inspired design.</p>
-    <a href="#" class="btn btn-light mt-3">Explore Now</a>
+    <a href="about.html" class="btn btn-light mt-3">Explore Now</a>
   </div>
 </section>
 
-  <!-- SVG Divider -->
-  <div class="svg-divider">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0V46.29c47.6,22.57,103.3,29.15,158,17.7..." fill="#f8f9fa"></path>
-    </svg>
-  </div>
 
   <!-- Product Highlights -->
   <section class="products py-5 bg-light" id="Product">
     <div class="container text-center">
-      <h3 class="mb-4">Our Featured Products</h3>
+      <h3 class="mb-4 fade-in">Our Featured Products</h3>
       <div class="row">
 
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 fade-in">
           <div class="card stitched-card">
             <img src="resources/pants.jpg" class="card-img-top" alt="Pants" />
             <div class="card-body">
               <h5 class="card-title">Cotton Denim Pants</h5>
               <p class="card-text">Soft, breathable, and stitched to perfection.</p>
-              <a href="#" class="btn btn-outline-dark">View</a>
+              <a href="about.html" class="btn btn-outline-dark">View</a>
             </div>
           </div>
         </div>
-                
-        <div class="col-md-4 mb-4">
+
+        <div class="col-md-4 mb-4 fade-in">
           <div class="card stitched-card">
             <img src="resources/shirt.jpg" class="card-img-top" alt="Shirt" />
             <div class="card-body">
@@ -86,7 +82,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 fade-in">
           <div class="card stitched-card">
             <img src="resources/wear.jpg" class="card-img-top" alt="wear" />
             <div class="card-body">
@@ -107,7 +103,7 @@
     <div class="container" id="footer-contact">
 <div class="row">
   <!-- Branding Column -->
-  <div class="col-lg-4 mb-4">
+  <div class="col-lg-4 mb-4 fade-in">
     <p class="text-muted">R&M Denim Limited.</p>
     <div class="social-icons mt-4">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -118,7 +114,7 @@
   </div>
 
   <!-- Contact Us -->
-  <div class="col-lg-4 col-md-4 mb-4 footer-links">
+  <div class="col-lg-4 col-md-4 mb-4 footer-links fade-in">
     <h5>Contact Us</h5>
     <ul class="text">
       <li><i class="fas fa-map-marker-alt me-2"></i> House No.31, Road No.29, Sector No.7, Uttara, Dhaka-1230, Bangladesh</li>
@@ -128,7 +124,7 @@
   </div>
 
   <!-- 📍 Google Maps Column (Now Last) -->
-  <div class="col-lg-2 col-md-4 mb-4">
+  <div class="col-lg-4 col-md-4 mb-4 fade-in">
     <h5>Our Location</h5>
     <div class="ratio ratio-4x3">
       <iframe
@@ -152,6 +148,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>
