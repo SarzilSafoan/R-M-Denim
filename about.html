@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About R&M Denim Wear Ltd.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for R & M Denim Wear Ltd. */
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2d3748;
+      --accent-color: #e9b949;
+      --light-color: #f8f9fa;
+      --dark-color: #1a202c;
+      --denim-stitch: #c0a16b;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Header Styles */
+    .stitched-header {
+      border-bottom: 3px dashed #333;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
+
+    .navbar-brand img {
+      transition: transform 0.3s ease;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.05);
+    }
+
+    .brand-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+    }
+
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 1.1rem;
+      padding: 10px 18px;
+      margin: 0 6px;
+      background-color: #fff;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      border: none !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color);
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+      text-decoration: none !important;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 767.98px) {
+      .navbar-nav {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      
+      .nav-link:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('resources/denim-closeup.jpg') center/cover no-repeat;
+      padding: 120px 0 80px;
+      color: white;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* About Sections */
+    .about-section {
+      padding: 100px 0;
+    }
+
+    .about-section:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
+    .center-title .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .denim-icon {
+      font-size: 2.5rem;
+      color: var(--denim-stitch);
+      margin-bottom: 1.5rem;
+    }
+
+    .value-card {
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .value-card h4 {
+      margin: 1.5rem 0 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background-color: var(--denim-stitch);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 50%;
+      padding: 0 40px;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      padding-right: 70px;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding-left: 70px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--denim-stitch);
+      border: 4px solid white;
+      box-shadow: 0 0 0 3px var(--denim-stitch);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -10px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+        left: 0;
+        text-align: left;
+      }
+      
+      .timeline-item:nth-child(odd) {
+        padding-right: 0;
+        text-align: left;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+        padding-left: 70px;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-dot {
+        left: 20px;
+        right: auto;
+      }
+      
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 20px;
+      }
+    }
+
+    /* Team Section */
+    .team-member {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .team-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px dashed var(--denim-stitch);
+      padding: 5px;
+    }
+
+    .team-member h4 {
+      margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .team-member p {
+      color: #777;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('resources/denim-texture.jpg') center/cover fixed no-repeat;
+      padding: 100px 0;
+      color: white;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .stat-text {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* SVG Divider */
+    .svg-divider {
+      background-color: #f8f9fa;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .svg-divider svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+    }
+
+    .svg-divider path {
+      fill: var(--light-color);
+    }
+
+    .svg-divider.dark path {
+      fill: var(--dark-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    footer h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+      border-bottom: 2px solid #6c757d;
+      padding-bottom: 10px;
+    }
+
+    footer h5::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .footer-links i {
+      margin-top: 4px;
+      color: var(--accent-color);
+      min-width: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+      font-size: 20px;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+      color: #fff;
+    }
+
+    .copyright {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .social-icons {
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+      
+      footer .row > div {
+        text-align: center;
+      }
+      
+      footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .footer-links li {
+        justify-content: center;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="bg-light border-bottom stitched-header">
+  <div class="container-fluid py-3">
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <!-- Left: Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="resources/logo.jpg" alt="RandM Logo" class="img-fluid" style="max-height: 60px;">
+          <span class="brand-text ms-2">R&M Denim</span>
+        </a>
+
+        <!-- Toggler Button (for mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Right: Navigation Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#footer-contact" class="nav-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <h1>Our Denim Legacy</h1>
+    <p>Where craftsmanship meets innovation in every thread</p>
+  </div>
+</section>
+
+<!-- About Intro Section -->
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+        <h2 class="section-title">The R&M Story</h2>
+        <p class="lead">Founded in 1995, R&M Denim Wear Ltd. has been at the forefront of denim innovation for over two decades.</p>
+        <p>What began as a small workshop with a passion for quality craftsmanship has evolved into a globally recognized denim brand, without ever compromising on our core values.</p>
+        <p>We believe that exceptional denim is more than just fabric—it's a canvas for self-expression, a testament to durability, and a commitment to sustainable luxury.</p>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="R&M Denim Craftsmanship" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Values Section -->
+<section class="about-section bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title center-title">Our Values</h2>
+      <p class="lead">The principles that guide every stitch we make</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="value-card">
+          <div class="denim-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h4>Professionalism</h4>
+          <p>From design to delivery, we maintain the highest standards of excellence in every aspect of our work.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="value-card">
+          <div class="denim-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h4>Creativity</h4>
+          <p>We push the boundaries of denim design, creating innovative pieces that stand out while staying timeless.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="value-card">
+          <div class="denim-icon">
+            <i class="fas fa-feather"></i>
+          </div>
+          <h4>Minimalism</h4>
+          <p>We believe in the power of simplicity—clean lines, thoughtful details, and timeless designs.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="value-card">
+          <div class="denim-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h4>Luxury</h4>
+          <p>Using only premium materials and meticulous craftsmanship to create denim that feels as good as it looks.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="value-card">
+          <div class="denim-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h4>Approachability</h4>
+          <p>Luxury denim should be accessible to all who appreciate quality, without pretension or exclusion.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="value-card">
+          <div class="denim-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h4>Sustainability</h4>
+          <p>Committed to ethical production and sustainable practices that respect both people and planet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Timeline Section -->
+<section class="about-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title center-title">Our Journey</h2>
+      <p class="lead">Milestones in denim excellence</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <h4>1995</h4>
+        <p>R&M Denim Wear Ltd. founded with a vision to create premium denim wear</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <h4>2002</h4>
+        <p>Opened our first dedicated denim factory with state-of-the-art equipment</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <h4>2008</h4>
+        <p>Launched our sustainable denim line using organic cotton and eco-friendly processes</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <h4>2015</h4>
+        <p>Expanded to international markets across Europe and North America</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <h4>2020</h4>
+        <p>Introduced innovative water-saving techniques, reducing consumption by 65%</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <h4>2023</h4>
+        <p>Celebrated over 5 million pairs of jeans crafted with precision and care</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-6">
+        <div class="stat-item" data-aos="fade-up">
+          <div class="stat-number" data-count="28">0</div>
+          <div class="stat-text">Years Experience</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-number" data-count="5000">0</div>
+          <div class="stat-text">Products Daily</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-number" data-count="42">0</div>
+          <div class="stat-text">Countries Served</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-number" data-count="98">0</div>
+          <div class="stat-text">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="about-section bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title center-title">Our Leadership</h2>
+      <p class="lead">The visionaries behind our denim revolution</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="team-member" data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="CEO" class="team-img">
+          <h4>Robert Chen</h4>
+          <p>Founder & CEO</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Head Designer" class="team-img">
+          <h4>Maya Rodriguez</h4>
+          <p>Creative Director</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Production Head" class="team-img">
+          <h4>James Thompson</h4>
+          <p>Production Head</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container" id="footer-contact">
+    <div class="row">
+      <!-- Branding Column -->
+      <div class="col-lg-4 mb-4 fade-in">
+        <p class="text-muted">R&M Denim Limited.</p>
+        <div class="social-icons mt-4">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="col-lg-4 col-md-4 mb-4 footer-links fade-in">
+        <h5>Contact Us</h5>
+        <ul class="text">
+          <li><i class="fas fa-map-marker-alt me-2"></i> House No.31, Road No.29, Sector No.7, Uttara, Dhaka-1230, Bangladesh</li>
+          <li><i class="fas fa-phone me-2"></i> +880 1616666776, +880 1738882466</li>
+          <li><i class="fas fa-envelope me-2"></i> masuma@jmgbd.com</li>
+        </ul>
+      </div>
+
+      <!-- 📍 Google Maps Column -->
+      <div class="col-lg-4 col-md-4 mb-4 fade-in">
+        <h5>Our Location</h5>
+        <div class="ratio ratio-4x3">
+          <iframe
+            src="https://www.google.com/maps?q=House+No.31,+Road+No.29,+Sector+No.7,+Uttara,+Dhaka-1230,+Bangladesh&output=embed"
+            allowfullscreen
+            loading="lazy"
+            style="border:0;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <p class="text mb-0">
+        <span class="d-block d-md-inline">&copy; 2025 R&M Denim. All rights reserved.</span>
+        <span class="d-block mt-2 d-md-inline ms-md-2">Developed by: <strong>Sarzil Safoan</strong></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Initialize animations
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Animate statistics counters
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200;
+    
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-count');
+      const count = +counter.innerText;
+      const increment = target / speed;
+      
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
+      
+      function updateCount() {
+        const current = +counter.innerText;
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCount, 1);
+        } else {
+          counter.innerText = target;
+        }
+      }
+    });
+
+    // Scroll animation for elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    function checkFade() {
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+        
+        if (isVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    
+    // Initial check
+    checkFade();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkFade);
+  });
+</script>
+</body>
+</html>
