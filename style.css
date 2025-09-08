@@ -393,6 +393,93 @@ footer h5::after {
   pointer-events: none;
   z-index: 999;
 }
+    .contact-team {
+      background-color: var(--light-bg);
+    }
+    
+    .contact-team h3 {
+      color: var(--primary-dark);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    
+    .contact-team h3:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .contact-btn {
+      background-color: var(--primary-dark);
+      color: var(--white);
+      border: none;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-btn:hover {
+      background-color: var(--accent);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-card {
+      background: var(--white);
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .team-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .team-card .card-title {
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .team-card .card-text {
+      color: var(--light-text);
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .team-card .card-body {
+        padding: 1.5rem !important;
+      }
+      
+      .team-card .card-title {
+        font-size: 1.1rem;
+      }
+      
+      .team-card .card-text {
+        font-size: 1rem;
+      }
+    }
 
 /* Animations */
 @keyframes fadeIn {
