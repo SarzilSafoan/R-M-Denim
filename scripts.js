@@ -45,7 +45,35 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactButton = document.getElementById('contactButton');
+      const teamCardsContainer = document.querySelector('.team-cards-container');
+      const teamCards = document.querySelectorAll('.team-card');
+      
+      contactButton.addEventListener('click', function() {
+        if (teamCardsContainer.style.display === 'none') {
+          teamCardsContainer.style.display = 'block';
+          contactButton.textContent = 'Hide Team';
+          
+          // Animate each card with a delay
+          teamCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('visible');
+            }, 200 * index);
+          });
+        } else {
+          // Hide the cards with animation
+          teamCards.forEach(card => {
+            card.classList.remove('visible');
+          });
+          
+          setTimeout(() => {
+            teamCardsContainer.style.display = 'none';
+            contactButton.textContent = 'Contact Our Team';
+          }, 600);
+        }
+      });
+    });
   // Initial check
   checkFade();
   
